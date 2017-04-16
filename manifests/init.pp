@@ -13,7 +13,7 @@ class selinux {
     if $::operatingsystem == 'Fedora' and $::operatingsystemrelease > 16 {
       package { 'policycoreutils-restorecond': ensure => installed }
     }
-    if $::osfamily == 'RedHat' and $::operatingsystemmajrelease >= 7 {
+    if $::osfamily == 'RedHat' and $::operatingsystemmajrelease > 6 {
       package { 'policycoreutils-restorecond': ensure => installed }
     }
     package { 'libselinux-ruby': ensure => installed }
