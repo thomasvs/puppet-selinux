@@ -13,6 +13,9 @@ class selinux {
     if $::operatingsystem == 'Fedora' and $::operatingsystemrelease > 16 {
       package { 'policycoreutils-restorecond': ensure => installed }
     }
+    if $::operatingsystem == 'RedHat' and $::operatingsystemrelease >= 7 {
+      package { 'policycoreutils-restorecond': ensure => installed }
+    }
     package { 'libselinux-ruby': ensure => installed }
     package { $audit2allow:
       alias  => 'audit2allow',
