@@ -46,3 +46,5 @@ avc:  denied  { name_connect } for  pid=9639 comm="check_gdns" dest=3506 scontex
 avc:  denied  { search } for  pid=21526 comm="check_mysql" name="mysql" dev=xvda ino=459346 scontext=unconfined_u:system_r:nrpe_t:s0 tcontext=system_u:object_r:mysqld_db_t:s0 tclass=dir
 avc:  denied  { write } for  pid=30018 comm="check_mysql" name="mysql.sock" dev=xvda ino=459546 scontext=unconfined_u:system_r:nrpe_t:s0 tcontext=system_u:object_r:mysqld_var_run_t:s0 tclass=sock_file
 avc:  denied  { connectto } for  pid=31229 comm="check_mysql" path="/var/lib/mysql/mysql.sock" scontext=unconfined_u:system_r:nrpe_t:s0 tcontext=system_u:system_r:mysqld_t:s0 tclass=unix_stream_socket
+# pam issue after recent centos 7.6 upgrade
+type=AVC msg=audit(1551832694.626:25518): avc:  denied  { read open execute } for  pid=21008 comm="sudo" name="unix_chkpwd" dev="sda" ino=3423 scontext=system_u:system_r:nrpe_t:s0 tcontext=system_u:object_r:chkpwd_exec_t:s0 tclass=file
